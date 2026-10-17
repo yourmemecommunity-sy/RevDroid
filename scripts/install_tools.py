@@ -51,7 +51,7 @@ def install_jadx() -> None:
     zipfile.ZipFile(io.BytesIO(download(asset["browser_download_url"]))).extractall(target)
     launcher = target / "bin" / "jadx"
     if launcher.exists():
-        launcher.chmod(launcher.stat().st_mode | stat.S_IEXEC)
+        launcher.chmod(launcher.stat().st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
     print(f"  jadx {rel['tag_name']} -> tools/jadx/")
 
 

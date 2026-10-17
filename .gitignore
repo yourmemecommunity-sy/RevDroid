@@ -1,0 +1,20 @@
+# runtime data and downloaded tools
+data/
+tools/
+
+# python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/.env
+
+# node
+frontend/node_modules/
+frontend/dist/
+
+# built test fixture (rebuild with backend/tests/fixtures/build_vulnapp.py)
+backend/tests/fixtures/vulnapp.apk
+
+# never commit real APKs you analysed
+*.apk

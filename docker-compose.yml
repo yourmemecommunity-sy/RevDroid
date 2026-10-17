@@ -1,0 +1,30 @@
+# One command:  docker compose up --build    then open http://localhost:8080
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      MAX_UPLOAD_MB: "150"
+      JADX_HEAP: "3g"            # raise (and mem_limit) for very large APKs
+      JADX_TIMEOUT_SEC: "600"
+      MAX_CONCURRENT_SCANS: "2"
+      KEEP_DECOMPILED: "false"
+      SCAN_RETENTION_DAYS: "30"
+      CORS_ORIGINS: "http://localhost:8080"
+    volumes:
+      - revdroid-data:/data
+    mem_limit: 4g
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  revdroid-data:

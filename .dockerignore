@@ -1,0 +1,9 @@
+data
+tools
+**/.venv
+**/node_modules
+**/dist
+**/__pycache__
+**/.pytest_cache
+**/*.apk
+backend/.env

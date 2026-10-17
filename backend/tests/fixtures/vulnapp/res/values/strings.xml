@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VulnBank Test</string>
+    <string name="google_api_key">AIzaSyDUMMY_KEY_FOR_REVDROID_TESTS_0000</string>
+    <string name="firebase_database_url">https://revdroid-test-db.firebaseio.com</string>
+    <string name="backend_secret">s3cr3t-backend-value-123</string>
+    <string name="password_hint">Enter your password</string>
+</resources>
